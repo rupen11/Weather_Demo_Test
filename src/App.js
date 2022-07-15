@@ -67,19 +67,17 @@ function App() {
             <div className="weather-box">
               {
                 info?.map((data, index) => {
-                  if (index + 1 <= page) {
-                    return <div className="innerbox" key={index + 1} >
-                      <div className="temp">
-                        Temp: {tempp === "cel" ? parseInt((data.main.temp - 32) * (5 / 9)) + "°C" : data.main.temp + "°F"}
-                      </div>
-                      <div className="date">
-                        Date: {new Date(data.dt_txt).toLocaleDateString()}
-                      </div>
-                      <div className="weather">
-                        Weather: {data.weather[0].main}
-                      </div>
+                  return <div className="innerbox" key={index + 1} >
+                    <div className="temp">
+                      Temp: {tempp === "cel" ? parseInt((data.main.temp - 32) * (5 / 9)) + "°C" : data.main.temp + "°F"}
                     </div>
-                  }
+                    <div className="date">
+                      Date: {new Date(data.dt_txt).toLocaleDateString()}
+                    </div>
+                    <div className="weather">
+                      Weather: {data.weather[0].main}
+                    </div>
+                  </div>
                 })
 
               }
