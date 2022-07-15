@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 function App() {
 
   const [info, setInfo] = useState([]);
-  const [data, setData] = useState([]);
   const [tempp, setTempp] = useState("fah");
   const [page, setPage] = useState(3);
 
@@ -67,7 +66,7 @@ function App() {
 
             <div className="weather-box">
               {
-                data?.map((data, index) => {
+                info?.map((data, index) => {
                   if (index + 1 <= page) {
                     return <div className="innerbox" key={index + 1} >
                       <div className="temp">
